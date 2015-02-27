@@ -32,7 +32,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 
-public class Imshow {
+public class Imshow extends JFrame {
 
 	public MyFrame Window;  
 	private ImageIcon image;

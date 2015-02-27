@@ -32,7 +32,7 @@ public class SamplesRead{
 					continue;
 				String fnAll0 = fnAllSplit[0];
 				String fnAll1 = fnAllSplit[1];
-				if("jpg.".equals(fnAll1)){
+				if("jpg".equals(fnAll1)){
 					String[] fnAll0Split  = fnAll0.split("_");
 					if(fnAll0Split.length!=2)
 						continue;

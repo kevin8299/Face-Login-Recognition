@@ -85,7 +85,7 @@ public class DetectRecog{
 								String fl = path + "recog.jpg";
 								Highgui.imwrite(fl,detectedFace);
 								String recogResult = recogHttp.recognize(fl);
-								System.out.println("Recognization R=result:"+recogResult);
+								System.out.println("Recognization result:"+recogResult);
 								String[] recogSplit =recogResult.split("_");
 								int len = recogSplit.length;
 								if(len>=2){
@@ -109,7 +109,7 @@ public class DetectRecog{
 					else{//Sampling process
 						if(imOri.Window.start){//&&imOri.Window.perNum<personNum
 							if(imOri.Window.again){
-								n=1;
+								n = -1;
 								imOri.Window.again = false;		
 							}
 								
@@ -155,7 +155,7 @@ public class DetectRecog{
 			Imgproc.cvtColor(frame, frame_gray, Imgproc.COLOR_RGB2GRAY);
 			System.out.println("Times Up!!!");
 			MatOfRect faces = new MatOfRect();
-			face_cascade.detectMultiScale(frame_gray,faces,1.1,7,0,new Size(24,24),new Size(640,280));
+			face_cascade.detectMultiScale(frame_gray,faces,1.1,7,0,new Size(24,24),new Size(640,480));
 			for(Rect rect:faces.toArray()){
 				Core.rectangle(frame_gray,new Point(rect.x,rect.y),new Point(rect.x+rect.width,rect.y+rect.height),new Scalar(0,0,255));
 				Mat roi = new Mat(frame,rect);
